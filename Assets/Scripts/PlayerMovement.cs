@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask theGround;
-    bool grounded;
+    bool grounded = false;
 
     public Transform orientation;
 
@@ -40,12 +40,16 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        
+        //ground check
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +0.2f, theGround);
+        // Debug.Log(transform.position);
+        Debug.Log(theGround);
+        // grounded = true;
+
         PlayerInputs();
        // MovePlayer();
         SpeedControl();
-        //ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +2f, theGround);
-
         //handle drag
         if(grounded){
             rb.drag = groundDrag;
@@ -70,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(jumpKey) && readyToJump && grounded){
         // if(Input.GetKeyDown(KeyCode.Space) && readyToJump && grounded){
             Debug.Log("press space");
+            Debug.Log(grounded);
             readyToJump = false;
             Jump();
             Invoke(nameof(ResetJump), jumpCD);
