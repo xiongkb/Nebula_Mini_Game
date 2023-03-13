@@ -43,13 +43,10 @@ public class PlayerMovement : MonoBehaviour
         
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +0.2f, theGround);
-        // Debug.Log(transform.position);
-        Debug.Log(theGround);
-        // grounded = true;
-
+        
         PlayerInputs();
-       // MovePlayer();
         SpeedControl();
+
         //handle drag
         if(grounded){
             rb.drag = groundDrag;
@@ -57,9 +54,6 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
         }
 
-        // if(Input.GetKeyDown(KeyCode.Space)){
-        //     Debug.Log("Pressed SPace");
-        // }
     }
 
     void FixedUpdate() {
@@ -72,9 +66,6 @@ public class PlayerMovement : MonoBehaviour
 
         //handle jump
         if(Input.GetKey(jumpKey) && readyToJump && grounded){
-        // if(Input.GetKeyDown(KeyCode.Space) && readyToJump && grounded){
-            Debug.Log("press space");
-            Debug.Log(grounded);
             readyToJump = false;
             Jump();
             Invoke(nameof(ResetJump), jumpCD);
@@ -82,12 +73,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void MovePlayer(){
-        // float horizontal = Input.GetAxisRaw("Horizontal");
-        // float vertical = Input.GetAxisRaw("Vertical");
-
         //calculate movement directon
         moveDirection = orientation.forward * vertical + orientation.right * horizontal;
-       // rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         
         // one the ground
         if(grounded){
@@ -118,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void ResetJump(){
+        //reinitialize jump
         readyToJump = true;
     }
 }
