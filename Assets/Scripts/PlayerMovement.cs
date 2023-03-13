@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
-
+        SpeedControl();
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +2f, theGround);
 
@@ -44,20 +44,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // void MoveInputs(){
-    //     float horizontal = Input.GetAxisRaw("Horizontal");
-    //     float vertical = Input.GetAxisRaw("Vertical");
-    // }
 
     void MovePlayer(){
         
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+
         //calculate movement directon
         moveDirection = orientation.forward* vertical + orientation.right * horizontal;
 
         rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+    }
 
-        
+    void SpeedControl() {
+        //limiting movement velocity
+        Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        // if movment velocity is greater than move speed, readjust so it doesn't go over
+        if(flatVelocity.magnitude > moveSpeed){
+            Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
+        }
     }
 }
