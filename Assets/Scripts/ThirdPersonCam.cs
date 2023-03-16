@@ -11,7 +11,6 @@ public class ThirdPersonCam : MonoBehaviour
 
     public float rotationSpeed;
 
-    
     void Update(){
         //rotate orientation
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
