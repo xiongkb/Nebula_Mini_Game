@@ -42,17 +42,18 @@ public class PlayerMovement : MonoBehaviour
     {
         
         //ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +0.2f, theGround);
+      // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +0.2f, theGround);
         
         PlayerInputs();
         SpeedControl();
 
         //handle drag
-        if(grounded){
-            rb.drag = groundDrag;
-        } else {
-            rb.drag = 0;
-        }
+        // if(grounded){
+        //     rb.drag = groundDrag;
+        // } else {
+        //     rb.drag = 0;
+        // }
+        Jump();
 
     }
 
@@ -65,11 +66,14 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
 
         //handle jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded){
-            readyToJump = false;
-            Jump();
-            Invoke(nameof(ResetJump), jumpCD);
-        }
+        // if(Input.GetKey(jumpKey) && readyToJump && grounded){
+        //     readyToJump = false;
+        //     Jump();
+        //     Invoke(nameof(ResetJump), jumpCD);
+        // // if(Input.GetKey(jumpKey)){
+        // // rb.AddRelativeForce(Vector3.up * jumpForce * Time.deltaTime);
+
+        // }
     }
 
     void MovePlayer(){
@@ -97,10 +101,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Jump(){
-        Debug.Log("Entered Jump()");
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
+    //     rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    //    rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+
+         if(Input.GetKey(jumpKey)){
+        rb.AddRelativeForce(Vector3.up * jumpForce * 10 * Time.deltaTime);
+
+        }
+
+         
+    
 
     }
 
