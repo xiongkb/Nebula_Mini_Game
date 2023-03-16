@@ -42,7 +42,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
         //ground check
-      // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +0.2f, theGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f +0.2f, theGround);
+
+        if (grounded) {
+            Invoke(nameof(ResetJump), jumpCD);
+        }
         
         PlayerInputs();
         SpeedControl();
@@ -70,9 +74,6 @@ public class PlayerMovement : MonoBehaviour
         //     readyToJump = false;
         //     Jump();
         //     Invoke(nameof(ResetJump), jumpCD);
-        // // if(Input.GetKey(jumpKey)){
-        // // rb.AddRelativeForce(Vector3.up * jumpForce * Time.deltaTime);
-
         // }
     }
 
@@ -101,23 +102,31 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Jump(){
-    //     rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
 
+    //    rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
     //    rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
 
-         if(Input.GetKey(jumpKey)){
-        rb.AddRelativeForce(Vector3.up * jumpForce * 10 * Time.deltaTime);
-
+        if(Input.GetKey(jumpKey) && readyToJump){
+            rb.AddRelativeForce(Vector3.up * jumpForce * 100f * Time.deltaTime);
+            // rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
+            // rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            StartCoroutine(LoseJump());
         }
 
          
-    
-
     }
 
     void ResetJump(){
         //reinitialize jump
         readyToJump = true;
+        
+    }
+
+    IEnumerator LoseJump(){
+        yield return new WaitForSeconds(2);
+        readyToJump = false;
+        // Invoke(nameof(ResetJump), jumpCD);
+
     }
 }
