@@ -6,18 +6,19 @@ using UnityEngine.SceneManagement;
 public class MenuBtns : MonoBehaviour
 {
     public int startButton;
-    public int quitButton;
     public int creditButton;
-    // load scene based on scene index
-    void StartBtn(){
+
+    // load scene based on scene index and menu btns
+    public void StartBtn(){
         SceneManager.LoadScene(startButton);
     }
 
-    void QuitBtn(){
-        SceneManager.LoadScene(quitButton);
+    public void QuitBtn(){
+        Debug.Log("Clicked Quit");
+        Application.Quit();
     }
 
-    void CreditBtn(){
+    public void CreditBtn(){
         SceneManager.LoadScene(creditButton);
     }
 }
