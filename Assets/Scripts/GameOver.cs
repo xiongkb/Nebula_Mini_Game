@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Player"){
             // go to gameover screen menu
+            
             SceneManager.LoadScene(loadScene);
         }
     }
