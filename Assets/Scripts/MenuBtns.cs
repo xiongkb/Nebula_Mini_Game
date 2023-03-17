@@ -29,7 +29,7 @@ public class MenuBtns : MonoBehaviour
     // }
 
     public void QuitBtn(){
-        Debug.Log("Clicked Quit");
+       // Debug.Log("Clicked Quit");
         Application.Quit();
     }
 
@@ -38,7 +38,7 @@ public class MenuBtns : MonoBehaviour
     // }
 
     public void TryAgain(){
-        Debug.Log(previousScene);
+       // Debug.Log(previousScene);
        SceneManager.LoadScene(previousScene);
     }
 

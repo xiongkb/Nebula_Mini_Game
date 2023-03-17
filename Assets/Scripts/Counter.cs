@@ -14,6 +14,9 @@ public class Counter : MonoBehaviour
     //to next level, spawn the "sun"
     public GameObject theSun;
 
+    void Start(){
+        activatedScore = 0;
+    }
     // Update is called once per frame
     void Update()
     {

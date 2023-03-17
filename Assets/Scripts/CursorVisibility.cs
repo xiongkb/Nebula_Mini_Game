@@ -15,7 +15,7 @@ public class CursorVisibility : MonoBehaviour
         //     Cursor.visible = true; 
         // }
 
-        if(scene.name == "Credits" || scene.name == "Game_Over" || scene.name == "Start_Menu"){
+        if(scene.name == "ThankYou" || scene.name == "Game_Over" || scene.name == "Start_Menu"){
            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true; 
         } else {
