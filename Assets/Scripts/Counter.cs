@@ -24,4 +24,6 @@ public class Counter : MonoBehaviour
             theSun.SetActive(true);
         }
     }
+
+    
 }
