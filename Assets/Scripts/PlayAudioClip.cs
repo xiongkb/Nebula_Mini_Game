@@ -18,6 +18,7 @@ public class PlayAudioClip : MonoBehaviour
         if(col.gameObject.tag == "Player" && !activated){
             audioSrc.PlayOneShot(soundClip);
             activated = true;
+            Counter.activatedScore++;
         }
         
     }
