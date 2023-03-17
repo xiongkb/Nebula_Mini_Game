@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 394347036}
   - component: {fileID: 394347035}
   - component: {fileID: 394347039}
+  - component: {fileID: 394347040}
   m_Layer: 7
   m_Name: theSun
   m_TagString: Untagged
@@ -772,7 +773,7 @@ Transform:
   m_GameObject: {fileID: 394347034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.45, y: -37.4, z: 29.76}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -874,6 +875,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &394347040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394347034}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2805df4c837194a49b7202cda3c0ac1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &454579024
 GameObject:
   m_ObjectHideFlags: 3
@@ -2283,7 +2304,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881375318}
-  m_LocalRotation: {x: 0.1891075, y: 0.000000018890207, z: -0.0000000036379204, w: 0.9819564}
+  m_LocalRotation: {x: 0.1891075, y: -0.000000018890207, z: 0.0000000036379204, w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
