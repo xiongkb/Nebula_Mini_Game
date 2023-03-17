@@ -1,3 +1,12 @@
+/* 
+    ==================================
+    DIG3878 Spring 2023
+    Kang Xiong
+    Assignment: Midterm
+    This file name: Spin.cs
+    ==================================
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +15,7 @@ public class Spin : MonoBehaviour
 {
     public int rotateSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    // rotate star along the y-axis
     void Update()
     {
         transform.RotateAround(transform.position, transform.up, Time.deltaTime * rotateSpeed);

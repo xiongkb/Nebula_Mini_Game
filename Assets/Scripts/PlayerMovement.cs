@@ -1,3 +1,13 @@
+/* 
+    ==================================
+    DIG3878 Spring 2023
+    Kang Xiong
+    Assignment: Midterm
+    This file name: PlayerMovement.cs
+    Note: the following code is based on two youtube tutorials for 3rd person movement and camera following using cinemamachine
+    ==================================
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -68,20 +78,13 @@ public class PlayerMovement : MonoBehaviour
     void PlayerInputs(){
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-
-        //handle jump
-        // if(Input.GetKey(jumpKey) && readyToJump && grounded){
-        //     readyToJump = false;
-        //     Jump();
-        //     Invoke(nameof(ResetJump), jumpCD);
-        // }
     }
 
     void MovePlayer(){
         //calculate movement directon
         moveDirection = orientation.forward * vertical + orientation.right * horizontal;
         
-        // one the ground
+        // on the ground
         if(grounded){
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         } else if(!grounded){
@@ -103,18 +106,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump(){
 
-    //    rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
-    //    rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
-
         if(Input.GetKey(jumpKey) && readyToJump){
             rb.AddRelativeForce(Vector3.up * jumpForce * 100f * Time.deltaTime);
-            // rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //reset y velocity
-            // rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             StartCoroutine(LoseJump());
         }
 
-         
     }
 
     void ResetJump(){
@@ -123,10 +119,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    //start falling after 2 seconds in the air
     IEnumerator LoseJump(){
         yield return new WaitForSeconds(2);
         readyToJump = false;
-        // Invoke(nameof(ResetJump), jumpCD);
 
     }
 }

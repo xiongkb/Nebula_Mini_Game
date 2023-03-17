@@ -1,3 +1,12 @@
+/* 
+    ==================================
+    DIG3878 Spring 2023
+    Kang Xiong
+    Assignment: Midterm
+    This file name: Counter.cs
+    ==================================
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +16,7 @@ using UnityEngine.UI;
 public class Counter : MonoBehaviour
 {
     public static int activatedScore = 0;
-    public int lvlAmount;
+    public int lvlAmount; //based on platform
     public TextMeshProUGUI scoreText;
 
 
@@ -20,7 +29,7 @@ public class Counter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "activated: " + activatedScore + "/" + lvlAmount;
+        scoreText.text = "lit: " + activatedScore + "/" + lvlAmount;
 
         //turn on the sun
         if(activatedScore >= lvlAmount){

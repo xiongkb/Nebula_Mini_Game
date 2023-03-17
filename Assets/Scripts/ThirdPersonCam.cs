@@ -1,3 +1,13 @@
+/* 
+    ==================================
+    DIG3878 Spring 2023
+    Kang Xiong
+    Assignment: Midterm
+    This file name: ThirdPersonCam.cs
+    Note: the following code is based on two youtube tutorials for 3rd person movement and camera following using cinemamachine
+    ==================================
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

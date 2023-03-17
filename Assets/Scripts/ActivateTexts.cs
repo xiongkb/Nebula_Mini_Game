@@ -1,3 +1,12 @@
+/* 
+    ==================================
+    DIG3878 Spring 2023
+    Kang Xiong
+    Assignment: Midterm
+    This file name: ActivateTexts.cs
+    ==================================
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
