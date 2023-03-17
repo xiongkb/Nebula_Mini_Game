@@ -5,10 +5,20 @@ using UnityEngine;
 public class PlatformActivate : MonoBehaviour
 {
     public Material glowUp;
+    public AudioClip soundEffect;
+    
+    AudioSource audioSrc;
 
-    void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Platform"){
-            Debug.Log("Touched platform: " + other);
+    void Start()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
+
+    // when the player touches the platforms, the platform will glow up
+    void OnCollisionEnter(Collision col) {
+        if (col.gameObject.tag == "Platform" && col.gameObject.GetComponent<Renderer>().material != glowUp){
+            audioSrc.PlayOneShot(soundEffect);
+            col.gameObject.GetComponent<Renderer>().material = glowUp;
         }
     }
 }
