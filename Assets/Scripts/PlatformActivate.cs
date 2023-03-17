@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PlatformActivate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Material glowUp;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Platform"){
+            Debug.Log("Touched platform: " + other);
+        }
     }
 }

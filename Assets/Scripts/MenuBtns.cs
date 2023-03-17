@@ -14,12 +14,12 @@ public class MenuBtns : MonoBehaviour
 
     void Start(){
         Scene scene = SceneManager.GetActiveScene();
-        Debug.Log("Current Scene is: " + scene.name);
+       // Debug.Log("Current Scene is: " + scene.name);
         currentScene = scene.name;
         if (currentScene != gameOver){
             
             previousScene = currentScene;
-            Debug.Log("Previous Scene is: " + previousScene);
+           // Debug.Log("Previous Scene is: " + previousScene);
         }
     }
 

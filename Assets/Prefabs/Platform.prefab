@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6949333945750040996}
   - component: {fileID: 6949333945750040997}
   - component: {fileID: 6949333945750041002}
+  - component: {fileID: 5327962092171019036}
   m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5327962092171019036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949333945750041003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa58b3cce24500247826d79db137a304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowUp: {fileID: 2100000, guid: 285f2e3f78835ce4b829d196c3c79c0b, type: 2}
