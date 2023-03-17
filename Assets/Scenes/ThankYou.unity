@@ -755,6 +755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049482823}
+  - component: {fileID: 1049482824}
   m_Layer: 5
   m_Name: Roller
   m_TagString: Untagged
@@ -784,6 +785,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -656}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1049482824
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049482822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: faba68ec77b47b842a4eb8751d2f4511, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1254513848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,8 +1144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258a03b2ac858b346a9532aa33b3ba93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: 3
-  creditButton: 2
 --- !u!114 &1525586905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,8 +1575,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1525586904}
         m_TargetAssemblyTypeName: MenuBtns, Assembly-CSharp
-        m_MethodName: StartBtn
-        m_Mode: 1
+        m_MethodName: LoadByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

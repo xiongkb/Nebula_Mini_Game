@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5e07d17a25bee42b741684091c174f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 5
+  sceneIndex: 4
 --- !u!1001 &433051429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2557,8 +2557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258a03b2ac858b346a9532aa33b3ba93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: 0
-  creditButton: 0
 --- !u!114 &1814532651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2774,7 +2772,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881375318}
-  m_LocalRotation: {x: 0.1891075, y: 0.000000018890207, z: -0.0000000036379204, w: 0.9819564}
+  m_LocalRotation: {x: 0.1891075, y: -0.000000018890207, z: 0.0000000036379204, w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuBtns : MonoBehaviour
 {
-    public int startButton;
-    public int creditButton;
+    // public int startButton;
+    // public int creditButton;
 
     public static string currentScene;
     public static string previousScene;
@@ -24,21 +24,26 @@ public class MenuBtns : MonoBehaviour
     }
 
     // load scene based on scene index and menu btns
-    public void StartBtn(){
-        SceneManager.LoadScene(startButton);
-    }
+    // public void StartBtn(){
+    //     SceneManager.LoadScene(startButton);
+    // }
 
     public void QuitBtn(){
         Debug.Log("Clicked Quit");
         Application.Quit();
     }
 
-    public void CreditBtn(){
-        SceneManager.LoadScene(creditButton);
-    }
+    // public void CreditBtn(){
+    //     SceneManager.LoadScene(creditButton);
+    // }
 
     public void TryAgain(){
         Debug.Log(previousScene);
        SceneManager.LoadScene(previousScene);
+    }
+
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

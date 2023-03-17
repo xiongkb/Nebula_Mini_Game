@@ -344,8 +344,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1219796798}
         m_TargetAssemblyTypeName: MenuBtns, Assembly-CSharp
-        m_MethodName: CreditBtn
-        m_Mode: 1
+        m_MethodName: LoadByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -876,8 +876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258a03b2ac858b346a9532aa33b3ba93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: 0
-  creditButton: 2
 --- !u!4 &1219796799
 Transform:
   m_ObjectHideFlags: 0
